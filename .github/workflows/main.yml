@@ -1,3 +1,20 @@
-steps:
-  - uses: browser-actions/setup-chrome@v1
-  - run: chrome --version
+name: Setup Chromium Latest
+
+on:
+  workflow_dispatch: # Memungkinkan workflow dijalankan secara manual
+  push:
+    branches:
+      - main # Jalankan workflow pada push ke branch main
+
+jobs:
+  setup-chromium:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Menginstal Chromium
+      - name: Setup Chromium
+        uses: browser-actions/setup-chrome@v1
+
+      # Step 2: Verifikasi versi Chromium
+      - name: Cek Versi Chromium
+        run: chrome --version
