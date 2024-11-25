@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # Memungkinkan workflow dijalankan secara manual
   push:
     branches:
-      - main # Jalankan workflow pada push ke branch main
+      - master # Jalankan workflow pada push ke branch main
 
 jobs:
   setup-chromium:
